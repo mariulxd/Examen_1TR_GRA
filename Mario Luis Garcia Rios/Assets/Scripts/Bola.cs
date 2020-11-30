@@ -6,12 +6,7 @@ using UnityEngine.UI;
 public class Bola : MonoBehaviour
 {
     public float speed = 5f;
-    [SerializeField] Text timeText;
-    [SerializeField] Text numeroCol;
-    public GameObject NumeroColumnas;
-    private CrearColumnas columnasA;
-    
-
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +19,7 @@ public class Bola : MonoBehaviour
         
         MoverBola();
 
-        columnasA = NumeroColumnas.GetComponent<CrearColumnas>();
-        double timePass = Time.time;
-        string total = timePass.ToString("f0");
-        timeText.text = total;
-        numeroCol.text = columnasA.nColumnas.ToString();
+      
 
     }
 

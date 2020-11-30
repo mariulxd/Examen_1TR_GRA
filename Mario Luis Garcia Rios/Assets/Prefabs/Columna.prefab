@@ -123,5 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f223aec60b17f949b6f0bdf11e945bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjetoVacio: {fileID: 5326867828522373648, guid: dab2aec3396210c4992b559c2f5154cc,
+  EmptyObject: {fileID: 3156653673869371120, guid: dab2aec3396210c4992b559c2f5154cc,
     type: 3}

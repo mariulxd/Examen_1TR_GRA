@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CrearColumnas : MonoBehaviour
 {
     public GameObject MyColumn;
     [SerializeField] Transform RefPos;
+    [SerializeField] Text timeText;
+    public Text numeroCol;
     Vector3 NewPos;
-    public int nColumnas = 0;
+    public int nColumnas;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +23,11 @@ public class CrearColumnas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      
+        double timePass = Time.time;
+        string total = timePass.ToString("f0");
+        timeText.text = total;
+        numeroCol.text = nColumnas.ToString("f0");
     }
 
     void CrearColumna()
@@ -33,6 +41,9 @@ public class CrearColumnas : MonoBehaviour
         
         
     }
+
+
+
 
     IEnumerator ColumnCorrutine()
     {

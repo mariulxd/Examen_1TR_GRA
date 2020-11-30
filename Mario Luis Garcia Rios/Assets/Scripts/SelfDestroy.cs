@@ -1,19 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelfDestroy : MonoBehaviour
 {
-    private CrearColumnas crearColumnas;
-    public GameObject ObjetoVacio;
-    
+    public GameObject EmptyObject;
+    private CrearColumnas ClaseCreacion;
     void OnTriggerEnter(Collider other)
     {
-
+        ClaseCreacion = EmptyObject.GetComponent<CrearColumnas>();
+        
         if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-           
+            ClaseCreacion.nColumnas--;
+
         }
         
     }
@@ -21,7 +23,7 @@ public class SelfDestroy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ObjetoVacio = GameObject.Find("CrearColumnas");
+        
 
     }
 
