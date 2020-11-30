@@ -5,16 +5,13 @@ using UnityEngine.UI;
 
 public class SelfDestroy : MonoBehaviour
 {
-    public GameObject EmptyObject;
-    private CrearColumnas ClaseCreacion;
+
     void OnTriggerEnter(Collider other)
     {
-        ClaseCreacion = EmptyObject.GetComponent<CrearColumnas>();
         
         if (other.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-            ClaseCreacion.nColumnas--;
 
         }
         
