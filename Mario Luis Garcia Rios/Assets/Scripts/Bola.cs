@@ -21,8 +21,7 @@ public class Bola : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float posX = Mathf.Clamp(transform.position.x, -10, 10);
-        float posZ = Mathf.Clamp(transform.position.z, -10, 10);
+        
         MoverBola();
 
         columnasA = NumeroColumnas.GetComponent<CrearColumnas>();
@@ -38,21 +37,21 @@ public class Bola : MonoBehaviour
         float posX = transform.position.x;
         float posZ = transform.position.z;
         float desplX = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * Time.deltaTime * speed * desplX);
-        float desplY = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * desplY);
-        /*if (posX >= -10 && posX <= 10 || posX <= -10 && posX > 0 || posX < 0 && posX >= 10)
+        float desplZ = Input.GetAxis("Vertical");
+        if (posX > -10 && posX < 10 || posX < -10 && desplX > 0 || posX > 10 && desplX < 0)
         {
-            float desplX = Input.GetAxis("Horizontal");
             transform.Translate(Vector3.right * Time.deltaTime * speed * desplX);
         }
-        
-       
-        if (posZ >= -10 && posZ <= 10 || posZ < -10 && posZ > 0 || posZ < 0 && posZ > 10) 
+        if (posZ > -10 && posZ < 10 || posZ < -10 && desplZ > 0 || posZ > 10 && desplZ < 0)
         {
-            float desplY = Input.GetAxis("Vertical");
-            transform.Translate(Vector3.forward * Time.deltaTime * speed * desplY);
-        }*/
+            transform.Translate(Vector3.forward * Time.deltaTime * speed * desplZ);
+        }
+
 
     }
+        
+       
+        
+
 }
+
